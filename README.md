@@ -1,27 +1,31 @@
-# TodoListAngularV18
+# Todo list anguilar
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.1.
+## Descripción
+Este proyecto es una lista de tareas, donde se puede añadir, eliminar y marcar como completada una tarea. Además, se puede filtrar por tareas completadas, pendientes o todas.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Resultado final
+![Todo list](./src/assets/img/captura_projecto_final.png)
 
-## Code scaffolding
+## Tecnologías
+- Angular (version 18.1.0)
+- Typescript
+- HTML
+- SASS
+- Tailwind
+  
+## Instrucciones para ver el proyecto en local
+### Paso 1
+Clona el proyecto en el botón verde que pone **code**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Paso 2
+Pon el comando, dentro de la carpeta del proyecto para instalar todo lo que necesita el proyecto para su funcionamiento
+`npm i` o `npm install` o `pnpm i` o `pnpm install`
 
-## Build
+### Paso 3
+Acciona el json-serve para que muestre los datos
+` json-server --watch db.json --port 3000`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Paso 4
+Haz correr para ver la app `ng serve`. Navegue hasta `http://localhost:4200/`. La aplicación se recargará automáticamente si cambia alguno de los archivos fuente.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
