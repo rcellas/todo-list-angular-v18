@@ -12,28 +12,34 @@ export class TaskService {
   tasks = signal<Task[]>([]);
   http = inject(HttpClient);
 
-  getAllTasks(){
+  getAllTasks() {
     return this.http.get<Task[]>(this.url);
   }
 
-  async addTask(task:Task){
-    try{
-      const result = await firstValueFrom(this.http.post<Task>(this.url, task).pipe(catchError(e=>of(e))));
+  async addTask(formData: FormData) {
+    try {
+      const result = await firstValueFrom(this.http.post<Task>(this.url, formData).pipe(catchError(e => of(e))));
       return result;
-    }catch(e){
+    } catch (e) {
       console.error(e);
     }
   }
 
-  async updateTask(task:Task){
-    try{
-      const result = await firstValueFrom(this.http.put<Task>(`${this.url}${task.id}`,task).pipe(catchError(e=>of(e))));
+  async updateTask(task: Task) {
+    try {
+      const result = await firstValueFrom(this.http.put<Task>(`${this.url}${task.id}`, task).pipe(catchError(e => of(e))));
       return result;
-    }
-    catch(e){
+    } catch (e) {
       console.error(e)
     }
   }
 
-
+  async deleteTask(task: Task) {
+    try {
+      const result = await firstValueFrom(this.http.delete<Task>(`${this.url}${task.id}`).pipe(catchError(e => of(e))));
+      return result;
+    } catch (e) {
+      console.error(e)
+    }
+  }
 }

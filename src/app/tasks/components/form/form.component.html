@@ -1,4 +1,14 @@
 <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="flex flex-col space-y-3">
   <input type="text" formControlName="nameTask" class="py-2 px-4 rounded-md bg-slate-700 shadow-md text-white text-lg w-full" placeholder="Enter task name">
-  <button type="submit"class="bg-blue-500 text-white font-bold py-3 rounded-md">Save task</button>
+  <input type="file" (change)="onFileChange($event)" class="block w-full text-sm text-gray-500
+        file:me-4 file:py-2 file:px-4
+        file:rounded-lg file:border-0
+        file:text-sm file:font-semibold
+        file:bg-blue-600 file:text-white
+        hover:file:bg-blue-700
+        file:disabled:opacity-50 file:disabled:pointer-events-none
+        dark:text-neutral-500
+        dark:file:bg-blue-500
+        dark:hover:file:bg-blue-400">
+  <button type="submit" class="bg-green-500 text-white font-bold py-3 rounded-md">Save task</button>
 </form>

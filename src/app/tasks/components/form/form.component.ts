@@ -7,17 +7,30 @@ import { Task } from '../../../shared/model/Task';
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './form.component.html',
-  styleUrl: './form.component.scss'
+  styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
   @Input() taskForm!: FormGroup;
-  @Output() sentForm= new EventEmitter<Task>();
+  @Output() sentForm = new EventEmitter<FormData>();
+  selectedFile!: File | null;
 
-  onSubmit(){
-    const task:Task={
-      nameTask:this.taskForm.controls["nameTask"].value,
-      isComplete:this.taskForm.controls["isComplete"].value
+  onFileChange(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.selectedFile = input.files[0];
     }
-    this.sentForm.emit(task);
+  }
+
+  onSubmit() {
+    const formData = new FormData();
+    formData.append('nameTask', this.taskForm.get('nameTask')?.value || '');
+    formData.append('isComplete', this.taskForm.get('isComplete')?.value || false);
+
+    if (this.selectedFile) {
+      formData.append('file', this.selectedFile);
+    }
+
+    console.log('Form submitted:', formData); // Añadir esta línea para depuración
+    this.sentForm.emit(formData);
   }
 }
