@@ -35,3 +35,16 @@ Conecta tu backend en la carpeta environmments, tanto en la parte development co
 ### Paso 4
 Haz correr para ver la app `ng serve`. Navegue hasta `http://localhost:4200/`. La aplicación se recargará automáticamente si cambia alguno de los archivos fuente.
 
+## Consideraciones de Seguridad
+
+### Accesibilidad
+- Se han añadido atributos ARIA y se utilizan etiquetas semánticas para mejorar la navegación de usuarios con discapacidades.
+
+### Manejo de Validaciones
+- Validaciones robustas con retroalimentación clara al usuario, utilizando `aria-invalid` y `aria-required`.
+
+### Manejo de Errores
+- Errores manejados correctamente, con mensajes claros que guían al usuario.
+
+### Interacción del Usuario
+- Indicaciones claras sobre el estado de las tareas y la interacción del usuario, utilizando cambios visuales y textos informativos.
