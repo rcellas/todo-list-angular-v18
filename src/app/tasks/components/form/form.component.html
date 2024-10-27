@@ -1,5 +1,9 @@
-<form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="flex flex-col space-y-3">
-  <input type="text" formControlName="nameTask" placeholder="Enter task name" class="py-2 px-4 rounded-md bg-slate-700 shadow-md text-white text-lg w-full">
-  <input type="file" (change)="onFileChange($event)" class="block w-full text-sm text-gray-500 file:bg-blue-600 file:text-white">
-  <button type="submit" class="bg-green-500 text-white font-bold py-3 rounded-md">Save task</button>
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="flex flex-col space-y-3" aria-labelledby="taskForm">
+  <label for="taskName" class="sr-only">Task Name</label>
+  <input id="taskName" type="text" formControlName="nameTask" placeholder="Enter task name" aria-required="true" class="py-2 px-4 rounded-md bg-slate-700 shadow-md text-white text-lg w-full">
+
+  <label for="taskFile" class="sr-only">Upload File</label>
+  <input id="taskFile" type="file" (change)="onFileChange($event)" class="block w-full text-sm text-gray-500 file:bg-blue-600 file:text-white" aria-labelledby="fileUpload">
+
+  <button type="submit" class="bg-green-500 text-white font-bold py-3 rounded-md" aria-label="Save Task">Save task</button>
 </form>
