@@ -1,4 +1,4 @@
-# Todo list Angular
+# Todo list Angular - Easy Hacking
 TodoApp es una aplicación de lista de tareas (Todo List) desarrollada en Angular y .NET que permite a los usuarios gestionar sus tareas de manera eficiente. La aplicación incluye una funcionalidad adicional para adjuntar imágenes a las tareas, permitiendo una mejor organización y contexto visual.
 
 El apartado del backend de la aplicación la puedes visitar en el siguiente enlace: [TodoApp Backend](https://github.com/rcellas/todo-test-solution)
@@ -35,3 +35,17 @@ Conecta tu backend en la carpeta environmments, tanto en la parte development co
 ### Paso 4
 Haz correr para ver la app `ng serve`. Navegue hasta `http://localhost:4200/`. La aplicación se recargará automáticamente si cambia alguno de los archivos fuente.
 
+## Consideraciones de Seguridad
+
+### Accesibilidad
+- Falta de atributos ARIA, lo que dificulta la navegación para usuarios con discapacidades.
+- No se proporcionan etiquetas semánticas adecuadas.
+
+### Manejo de Validaciones
+- Validaciones mínimas o inexistentes en formularios, permitiendo el envío de datos erróneos.
+
+### Manejo de Errores
+- Gestión deficiente de errores, sin retroalimentación clara para el usuario.
+
+### Interacción del Usuario
+- Falta de indicaciones claras sobre el estado de las acciones.
