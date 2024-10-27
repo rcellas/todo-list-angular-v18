@@ -1,4 +1,5 @@
-<section class="flex flex-col space-y-4 mt-6" aria-label="Task Manager">
+<section class="flex flex-col space-y-4 mt-6" role="region" aria-labelledby="task-section">
+  <h2 id="task-section" class="sr-only">Task Management Section</h2>
   <app-form [taskForm]="taskForm" (sentForm)="onSubmit($event)"></app-form>
   <app-list [tasks]="tasks" (onDeleteTask)="deleteTask($event)"></app-list>
 </section>
